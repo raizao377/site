@@ -1,0 +1,191 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  background: #4a90e2;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #357abd;
+}
+
+/* Section Styles */
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+}
+
+/* Article Styles */
+article {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+article h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+article p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Button Styles */
+button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+/* Comments Section */
+#comentarios {
+  margin-top: 3rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#comentariosLista p {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+#comentarioInput {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  article {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  section {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    gap: 0.3rem;
+  }
+
+  nav ul li a {
+    padding: 0.4rem 0.8rem;
+  }
+
+  article h3 {
+    font-size: 1.3rem;
+  }
+
+  article p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  #comentarioInput {
+    padding: 0.6rem;
+  }
+}

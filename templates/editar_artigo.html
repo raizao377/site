@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Artigo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Editar Artigo</h1>
+  </header>
+  <div class="form-container">
+    <form action="{{ url_for('editar_artigo', artigo_id=artigo_id) }}" method="post">
+      <label for="titulo">Título do Artigo:</label>
+      <input type="text" id="titulo" name="titulo" value="{{ artigo['titulo'] }}" required>
+
+      <label for="conteudo">Conteúdo:</label>
+      <textarea id="conteudo" name="conteudo" rows="5" required>{{ artigo['conteudo'] }}</textarea>
+
+      <button type="submit">Salvar Alterações</button>
+    </form>
+  </div>
+</body>
+</html>

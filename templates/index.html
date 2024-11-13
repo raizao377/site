@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornal Estudantil Online</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Jornal Estudantil Online</h1>
+    
+    <nav>
+      <ul>
+
+        <li><a href="#noticias">Notícias Escolares</a></li>
+        <li><a href="#opiniao">Opinião dos Estudantes</a></li>
+        <li><a href="{{ url_for('adicionar_artigo') }}">Adicionar Artigo ou Opinião</a></li>
+        <li><a href="#entrevistas">Entrevistas</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    
+    <p>Bem-vindo, {{ usuario }}! Você está logado.</p>
+    <!-- Conteúdo da página inicial -->
+  </section>
+  <!-- Seção de Notícias -->
+  <section id="noticias">
+    <h2>Notícias Escolares</h2>
+    <article>
+      <h3>Importante Evento na Escola</h3>
+      <img src="{{ url_for('static', filename='css/sed.jpeg') }}" alt="Imagem do Evento Científico" width="300">
+      <p>Alunos da escola Ceti Paulo Freire retornam a escola apos o intercanbio educacional nos estados unidos atraves do Seduckathon que foi uma competição de progamação.
+
+      </p>
+      <button onclick="lerMais()">Leia Mais</button>
+    </article>
+  </section>
+  
+
+  <!-- Seção de Opinião -->
+  <section id="opiniao">
+    <h2>Opinião dos Estudantes</h2>
+    <article>
+      <h3>RAI: a escola muda o estudante não a sua mentalidade</h3>
+      <p>Opinião do estudante sobre o tema...</p>
+    </article>
+  </section>
+
+ 
+  <section id="entrevistas">
+    <h2>Entrevistas</h2>
+    <article>
+      <h3>Entrevista com Professor </h3>
+      <p>Resumo da entrevista...</p>
+    </article>
+  </section>
+
+
+  <section id="eventos">
+    <h2>Eventos</h2>
+    <ul>
+      <li>Data - Evento 1</li>
+      <li>Data - Evento 2</li>
+    </ul>
+  </section>
+
+  <!-- Espaço para Comentários -->
+  <section id="comentarios">
+    <h2>Comentários</h2>
+    <div id="comentariosLista"></div>
+    <input type="text" id="comentarioInput" placeholder="Digite seu comentário">
+    <button onclick="adicionarComentario()">Comentar</button>
+  </section>
+
+
+  <section id="noticiasss">
+    <h2>Notícias Escolares</h2>
+    {% for artigo in artigos %}
+    <article>
+      <h3>{{ artigo.titulo }}</h3>
+      <p><strong>Autor:</strong> {{ artigo.autor }}</p>
+      <p>{{ artigo.conteudo }}</p>
+    </article>
+    {% else %}
+    <p>Não há artigos publicados ainda.</p>
+    {% endfor %}
+  </section>
+
+  
+  
+
+
+
+  <nav>
+    <ul>
+      <li><a href="/logout">Sair</a></li>
+    </ul>
+  </nav>
+
+  <script src="{{ url_for('static', filename='css/script.js') }}"></script>
+</body>
+</html>

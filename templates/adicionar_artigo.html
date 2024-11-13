@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Artigo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Adicionar Artigo</h1>
+  </header>
+  <div class="form-container">
+  <form action="{{ url_for('adicionar_artigo') }}" method="post">
+    <label for="titulo">Título do Artigo:</label>
+    <input type="text" id="titulo" name="titulo" required>
+
+    <label for="conteudo">Conteúdo:</label>
+    <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
+
+    <button type="submit">Enviar Artigo</button>
+  </form>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('index') }}">Voltar à Página Inicial</a></li>
+    </ul>
+  </nav>
+
+
+
+
+
+  <style>form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    
+  }
+  
+  form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  form input[type="text"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+
+
+
+  .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;}
+  </style>
+</body>
+</html>
